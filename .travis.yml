@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - "5"
   - "5.10.1"
 env:
   - DATABASE_URL="postgres://crudtest:crudtest@localhost/crudtest"
   - PORT="5000"
+notifications:
+   slack: devops-training-spb:7C6VUojq9xStvnITcVFUHWag
