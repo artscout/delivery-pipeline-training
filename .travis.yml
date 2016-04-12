@@ -6,6 +6,6 @@ env:
 notifications:
    slack: devops-training-spb:7C6VUojq9xStvnITcVFUHWag
 addons:
-  - postgresql
+  postgresql: '9.4'
 before_script:
   - psql -c 'create database crudtest;' -U postgres
