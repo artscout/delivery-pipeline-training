@@ -1,11 +1,15 @@
 language: node_js
 node_js:
-  - "5.10.1"
+- 5.10.1
 env:
-  - DATABASE_URL="postgres://postgres@localhost/crudtest" PORT="5000"
+- DATABASE_URL="postgres://postgres@localhost/crudtest" PORT="5000"
 notifications:
-   slack: devops-training-spb:7C6VUojq9xStvnITcVFUHWag
+  slack: devops-training-spb:7C6VUojq9xStvnITcVFUHWag
 addons:
   postgresql: '9.4'
 before_script:
-  - psql -c 'create database crudtest;' -U postgres
+- psql -c 'create database crudtest;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: XncXkHnWAtHzl39aiyWg4zJfaszoDSMhnztDsqNETCh9R7JIf9dIzfe+EtTzbxavu4ee2qC8YS3YMhYwKaCDH0wan1il+GfsH56H+GainFrG3OUyIVUKRMv5t/Q7tl/1u5BU9haSxXU1NyXfbN8e3buWleDRQtDwl7Cdz4ZQAaMVAR5VGZoo+PNaUJuRZaMBBmIr2IrWas/TpOkwsDFIHSNJheQ/kWBOsGH5qhPzmLAZOdkpxcCzj95e5n9lJeG9OFGhXcQParahkcKWOq2RrY/w2vKkWm9kdJjxfD+0mYhf3BA4n7qMKg0cRVclBXqYS7o9dnjC41fLVvgrrCZUgRv7evb3UgKn2yC5lrqCisHZVzv37kYvmJ49FXRa/eV8W9ustyAbbaUvDPXYaeqUEnwlr13QWieEFTShoCarM2KAYJg7M1gw+RDdto/7ks3l8pQ1wFMJ8IGi1SSU8ZHMFTzR1tnqRsBDYnpVsrIOv4xQ+Sz5bUy0wdnUV7Wue/hE4uzllhdO019iy8FcNSExDOm4kP2kD6IXX9NV9znaoEdYwvi4YLrSSVSycH9ruQwNS3ShLUao7e51jVKse0t8SUN2u1ujnDaQEs7LY5kOnMp4CK6uNJrffiaAOFhWtynIz+7Fccx0Wa1wOFL6b3Ndg5KXAnLwskOB0bB0o3LXCZ0=
